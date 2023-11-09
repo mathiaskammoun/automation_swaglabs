@@ -1,3 +1,4 @@
 {
-  "address_login_page" : "https://www.saucedemo.com/"
+  "address_login_page" : "https://www.saucedemo.com/",
+  "inventory_page": "https://www.saucedemo.com/inventory.html"
 }

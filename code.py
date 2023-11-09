@@ -1,7 +1,7 @@
 from selenium import webdriver
 import json
 
-from page import LoginPage
+from page import LoginPage, InventoryPage
 
 with open('config.json') as f:
     CONFIG = json.load(f)
@@ -17,8 +17,15 @@ def run():
     login_page.fill_form("standard_user", "secret_sauce")
     login_page.click_login_button()
 
+    inventory_page = InventoryPage(driver)
+    inventory_page.is_page_load_success()
+
     driver.quit()
+
+
+
 
 
 if __name__ == "__main__":
     run()
+
