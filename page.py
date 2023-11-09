@@ -28,6 +28,13 @@ class LoginPage:
         button_element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(LoginPageLocators.LOGIN_BUTTON_LOCATOR))
         button_element.click()
 
+    def is_error_message(self):
+        wait = WebDriverWait(self.driver, 10)
+        message_element = wait.until(EC.presence_of_element_located(LoginPageLocators.ERROR_MESSAGE_LOCATOR))
+        return message_element.is_displayed()
+
+
+
 
 class LoginPageLocators:
     """A class for main page locators. All main page locators should come here"""
@@ -35,6 +42,7 @@ class LoginPageLocators:
     LOGIN_BUTTON_LOCATOR = (By.ID, 'login-button')
     USER_FIELD_LOCATOR = (By.ID, 'user-name')
     PSWD_FIELD_LOCATOR = (By.ID, 'password')
+    ERROR_MESSAGE_LOCATOR = (By.TAG_NAME, "h3")
 
 
 class InventoryPage:
