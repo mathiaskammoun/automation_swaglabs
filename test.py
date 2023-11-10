@@ -17,8 +17,8 @@ class TestLogin(unittest.TestCase):
 
     def test_successful_login(self):
         """
-        Test lusha.com contact sales feature
-        :return:
+        Test Swag Labs website positive login
+        :return: None
         """
 
         # Load the main page. In this case the home page
@@ -32,6 +32,13 @@ class TestLogin(unittest.TestCase):
         self.assertTrue(inventory_page.is_page_load_success(), "Login was not successful")
 
     def test_wrong_login(self):
+        """
+        Test Swag Labs login with wrong login credentials on different tests cases
+            - Wrong password
+            - Wrong username
+            - Both username and password wrong
+        :return:
+        """
         # Load the main page. In this case the home page
         login_page = LoginPage(self.driver)
         self.assertTrue(login_page.is_title_matches(), "Login Page successfully loaded")
